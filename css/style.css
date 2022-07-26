@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+.game-board{
+    width: 100%;
+    height: 50rem;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff)
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 8rem;
+    animation: pipe-animation 2s infinite linear;
+}
+
+.mario{
+    width: 15rem;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+.clouds{
+    width: 55rem;
+    position: absolute;
+    animation: clouds-animation 10s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from{
+        right: -8rem;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 18rem;
+    }
+
+    50%{
+        bottom: 18rem;
+    }
+
+    60%{
+        bottom: 18rem;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from{
+        right: -55rem;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+#refresh{
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 20rem;
+    z-index: 2;
+    display: none;
+}
+
+#refresh button{
+    width: 42rem;
+    height: 8rem;
+    font-size: 5rem;
+    font-family: 'Inconsolata', monospace;
+    border-radius: 5rem;
+    cursor: pointer;
+    background-color: transparent;
+    backdrop-filter: blur(0.5rem);
+}
+
+.score-board{
+    background-color: rgb(35, 160, 35);
+    height: 12.5rem;
+}
+
+.score-board p{
+    font-size: 10rem;
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+}
